@@ -1,21 +1,25 @@
 \input{./settings}
 
-% ====================== 个人信息 ======================
+% ====================== 模板说明 ======================
+% 这是可提交的简历模板文件，不填写真实个人信息。
+% 本地私有版本请使用 main.local.tex，并确保它已加入 .gitignore。
+
+% ====================== 基本信息 ======================
 % 学院信息
-\newcommand{\school}{\small{信息学部 | Faculty of Information Science}}
+\newcommand{\school}{\small{学院名称 | Faculty Name}}
 
 % 联系方式
 \newcommand{\contact}{
-    \scriptsize  % 使用较小字号
+    \scriptsize
     \textcolor{white}{
         % 邮箱
-        \faEnvelope \quad \href{523918392@qq.com}{523918392@qq.com}
+        \faEnvelope \quad \href{mailto:your.email@example.com}{your.email@example.com}
         \hspace{4em}
         % 手机号
-        \faPhone \quad  18711417403
-        % GitHub
+        \faPhone \quad  000-0000-0000
         \hspace{4em}
-        \faGithub \quad \href{https://github.com/IceFerryLing}{https://github.com/IceFerryLing}
+        % GitHub
+        \faGithub \quad \href{https://github.com/yourname}{github.com/yourname}
     }
 }
 
@@ -63,16 +67,20 @@
     \begin{minipage}{0.82\textwidth}
         \section{\makebox[\widthof{\faAddressCard}][c]{\color{HIT_Blue}{\faAddressCard}}\quad 个人信息}
         \begin{tabularx}{\linewidth}{p{\widthof{出生日期:}}Xp{\widthof{政治面貌:}}X}
-            姓\ \ \ \ \ \ \ \ 名: & 周子轩 & 
-            性\ \ \ \ \ \ \ \ 别: & 男  \\
-            出生年月: & 2007年8月 & 
-            政治面貌: & 积极分子 \\
+            姓\ \ \ \ \ \ \ \ 名: & 姓名 & 
+            性\ \ \ \ \ \ \ \ 别: & 性别  \\
+            出生年月: & YYYY年MM月 & 
+            政治面貌: & 政治面貌 \\
         \end{tabularx}
     \end{minipage}
     \hspace{2em}
     \begin{minipage}{0.12\textwidth}
         \setlength{\fboxsep}{0pt}
-        \doublebox{\includegraphics[width=\linewidth]{images/avatar.png}}
+        \doublebox{
+            \begin{minipage}[c][3.2cm][c]{\linewidth}
+                \centering\scriptsize 证件照
+            \end{minipage}
+        }
     \end{minipage}
 \end{figure}
 \vspace{-1em}
@@ -82,31 +90,31 @@
 \vspace{-0.5em}
 \begin{table}[h!]
     \begin{tabularx}{\textwidth}{XXp{\widthof{2025年 -- 预计2029年6月毕业}}}
-        哈尔滨工业大学（深圳） &计算机与电子通信 & 2025年 -- 预计2029年6月\\
-        \textbf{学分绩: 89.89/100.00} & \textbf{学分绩排名: 155/942} \\
+        学校名称 & 专业名称 & YYYY年 -- YYYY年\\
+        \textbf{学分绩: XX.XX/100.00} & \textbf{学分绩排名: X/XXX} \\
     \end{tabularx}
 \end{table}
 
 % ====================== 项目经历 ======================
 \section{\makebox[\widthof{\faChalkboardTeacher}][c]{\color{HIT_Blue}{\faChalkboardTeacher}}\quad 项目经历}
 \vspace{0.5em}
-{\large{\textbf{vLLM模型推理优化比赛}}} \hfill {推理引擎 / 高性能计算}\\
-参与大模型推理优化，关注吞吐、显存占用与请求调度；了解PagedAttention、continuous batching、KV Cache管理等推理引擎机制。
+{\large{\textbf{项目名称一}}} \hfill {技术方向 / 项目角色}\\
+项目简介，说明目标、职责、关键技术、实现方法与结果。
 
 \vspace{0.8em}
-{\large{\textbf{从零实现Transformer模型}}} \hfill {深度学习 / Python}\\
-使用Python实现Embedding、Multi-Head Attention、FFN、LayerNorm等核心模块，熟悉训练循环、损失计算与推理生成流程。
+{\large{\textbf{项目名称二}}} \hfill {技术方向 / 项目角色}\\
+项目简介，说明目标、职责、关键技术、实现方法与结果。
 
 \vspace{0.8em}
-{\large{\textbf{金融数据处理与量化回测实验}}} \hfill {Python / 数据分析}\\
-使用Pandas、NumPy完成金融数据清洗、因子计算与回测实验，围绕收益、回撤等指标评估策略表现。
+{\large{\textbf{项目名称三}}} \hfill {技术方向 / 项目角色}\\
+项目简介，说明目标、职责、关键技术、实现方法与结果。
 
 % ====================== 竞赛经历 ======================
 \section{\makebox[\widthof{\faTrophy}][c]{\color{HIT_Blue}{\faTrophy}}\quad 竞赛经历}
 \vspace{-1em}
 \begin{table}[h!]
     \begin{tabularx}{\textwidth}{Xp{\widthof{第零零负责人人人}}p{\widthof{国家级-第100名}}p{\widthof{2030年13月}}}
-        \textbf{2025年全国大学生数学竞赛} & 个人 & 省一等奖 & 2025年10月 \\
+        \textbf{竞赛名称} & 个人/团队 & 奖项等级 & YYYY年MM月 \\
     \end{tabularx}
 \end{table}
 
@@ -114,11 +122,11 @@
 \section{\makebox[\widthof{\faWrench}][c]{\color{HIT_Blue}{\faWrench}}\quad 技能特长}
 \vspace{0.5em}
 \begin{itemize}
-    \item 编程语言：熟悉\Cpp（\Cpp 11/17、内存池、线程池），熟练Python，熟悉TypeScript与Next.js
-    \item 系统与高性能计算：理解CSAPP、内存管理、并发编程；掌握CUDA及Reduce、MatMul、Softmax等算子优化
-    \item AI推理与深度学习：了解vLLM、PagedAttention、continuous batching；从零实现Transformer，熟悉训练与推理流程
-    \item 工程与数据能力：具备AI Agent辅助开发经验，熟悉MongoDB、Git、Docker；熟练使用Pandas、NumPy进行量化回测与数据挖掘
-    \item 算法基础：数据结构扎实，学习过算法竞赛知识，代码规范，学习能力强
+    \item 编程语言：填写熟悉的编程语言、框架与工具
+    \item 系统与工程：填写系统基础、工程实践、开发工具或部署经验
+    \item 专业方向：填写研究方向、课程基础、项目技术栈或领域能力
+    \item 数据与实验：填写数据处理、实验分析、评估指标或相关工具
+    \item 综合能力：填写算法基础、协作经验、文档能力或其他优势
 \end{itemize}
 
 % ====================== 所获荣誉 ======================
@@ -126,7 +134,7 @@
 \vspace{-1em}
 \begin{multicols}{2}
     \begin{itemize}
-        \item 2025-2026学年校级优秀学生
+        \item YYYY-YYYY学年 荣誉名称
     \end{itemize}
 \end{multicols}
 
