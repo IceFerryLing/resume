@@ -75,18 +75,17 @@
 \renewcommand{\CJKglue}{\hskip 0.05em}  % 中文字符间距
 
 % ====================== 字体设置 ======================
-% 英文字体：狮尾四季春
-% 英文字体：狮尾四季春（显式指定粗体文件以避免找不到字体的问题）
-% 尝试使用名为 SweiSpring 的系统字体（若已安装），否则回退到常用字体以保障可编译性
-\IfFontExistsTF{SweiSpring}
-  {%% 如果系统中存在名为 SweiSpring 的字体
-    \setmainfont{SweiSpring}
-    \setCJKmainfont{SweiSpring}
-  }
-  {%% 否则使用 TeX Live 中常见且可用的替代字体
-    \setmainfont{TeX Gyre Termes}
-    \setCJKmainfont{SimSun}
-  }
+% 字体：狮尾四季春（加糖）简体版，直接按文件从仓库 fonts/ 目录加载，无需安装到系统
+% 注意：仓库自带的 SweiSpring.ttf 实为繁体 Medium 字重、SweiSpring-Bold.ttf 是损坏的空文件，
+% 两者均已弃用；现用官方 github.com/max32002/swei-spring 仓库的简体 Regular 与 Bold
+\setmainfont{SweiSpringSugarCJKsc-Regular.ttf}[
+    Path = fonts/,
+    BoldFont = SweiSpringSugarCJKsc-Bold.ttf
+]
+\setCJKmainfont{SweiSpringSugarCJKsc-Regular.ttf}[
+    Path = fonts/,
+    BoldFont = SweiSpringSugarCJKsc-Bold.ttf
+]
 
 % ====================== 主题色设置 ======================
 % 哈工大校徽标准色（RGB: 0, 83, 117），参考https://xcb.hitwh.edu.cn/_upload/article/files/fa/5c/e1e0bdb340e98b473b5a0e34963c/6250efd5-f74a-47bb-b5a7-8a8b86f9451b.pdf第14页
